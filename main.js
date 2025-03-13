@@ -35,7 +35,7 @@ async function getWeather() {
         saveWeatherData(data);
         displayWeather(data);
     } catch (error) {
-        errorContainer.textContent = error.message; // Zeigt Fehlermeldung an
+        errorContainer.textContent = error.message; 
     }
 }
 
@@ -63,7 +63,7 @@ function displayWeather(data) {
         <h2>${data.name}</h2>
         <h3>${country}</h3>
         <p>${lat}°, ${lon}°</p>
-        <p>Lokate Uhrzeit: </br> <b class="localtime" >${localTime.toLocaleTimeString()}</></p>
+        <p>Lokale Uhrzeit: </br> <b>${localTime.toLocaleTimeString()}</></p>
         <img src="${icon}" alt="Wetter Icon">
         <p>${description}</p>
         <p>${temp}°C</p>

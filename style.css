@@ -75,5 +75,6 @@ button:hover {
 }
 
 .weather-card .close-btn:hover {
-    background: #007BFF;
+    transform: scale(1.2); 
+    transition: transform 0.2s ease;
 }
