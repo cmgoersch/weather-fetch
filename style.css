@@ -16,6 +16,11 @@ input {
     border-radius: 5px;
 }
 
+#errorMessage {
+    font-style: italic;
+
+}
+
 button {
     padding: 10px 10px;
     background-color: #007BFF;
@@ -23,6 +28,9 @@ button {
     border: none;
     border-radius: 1px;
     cursor: pointer;
+}
+.localtime{
+    font-size: 20px;
 }
 
 button:hover {
