@@ -1,3 +1,5 @@
+import { countryNames } from './countryNames.js';
+
 const apiKey = 'fdb83fd7034caa973d728f28976bf0f4'; 
 
 document.addEventListener('DOMContentLoaded', loadStoredWeather);
@@ -9,7 +11,7 @@ document.getElementById('cityInput').addEventListener("keypress", function(event
     }
 });
 
-async function getWeather() {
+window.getWeather = async function() {
     const city = document.getElementById('cityInput').value.trim();
     const errorContainer = document.getElementById('errorMessage'); 
     errorContainer.textContent = ""; 
@@ -50,7 +52,7 @@ function displayWeather(data) {
     const hour = localTime.getHours();
     const bgImage = hour >= 6 && hour < 18 ? "images/day.gif" : "images/night.gif";
     
-    const country = data.sys.country;  
+    const country = countryNames[data.sys.country] || data.sys.country;  // Ländercode in Namen umwandeln
     const lat = data.coord.lat.toFixed(2);
     const lon = data.coord.lon.toFixed(2);
 
